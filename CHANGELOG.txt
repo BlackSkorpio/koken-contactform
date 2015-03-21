@@ -1,0 +1,46 @@
+﻿CHANGELOG.txt
+20150320
+	Added a simple versioning to the files, will do for now
+
+20150319
+	Created <create_contact_lens.php>
+	To automated the creation of <contact.lens>
+	Created <settings.php>
+	Moved out all variables to <settings.php> thous making the contact form more 
+	multilang and modulare
+	Created <README.txt>
+	Created the "read me" with instructions so other people can benefit from this 
+	package: if they want.
+	Created <CHANGELOG.txt>
+	So i can keep track of what has changed from time to time
+
+20150318
+	Added also $isoname to make sure also the senders name was keept intact
+	Added $recipientname <$recipient> to the mail header to make it look 
+	"better"
+	Added $date and $mid to create and add the correct date and mail id to the mail 
+	header
+
+20150317
+	Added $isomessage and $isosubject to make sure that foregin characters where 
+	keept intact in the mail
+
+20150316
+	Added $mailfunction to make the form send mail from varoystrand.se
+	Added -f$email to the mail header to make sure the mail was delivered.
+20150311
+	Made <contact.lens> pick up {{ site.title }} and the <koken:head> to make it more 
+	a "real" koken page
+	Added the code for <koken:profile_facebook> and <koken:profile_twitter> to my
+	"business card"
+
+
+TO DO!
+Get the whole "echilada" up on GITHUB maybe?
+Make create_contact_lens.php more like a "real" installer: now it is plain ugly!!!!
+But it gets the job done!
+Make it a "real" plugin to koken!!!!
+Make <settings.php> pick up $recipient and $recipientname from Koken it self
+Clean up contact.php!!!!!!
+Add a Capcha to the form
+Add some logic and checks to the input fields for added security
