@@ -63,6 +63,7 @@ Contents of:
 	CHANGELOG.txt
 	contact.php
 	create_contact_lens.php
+	LICENSE
 	README.txt
 	settings.php
 	<css>
