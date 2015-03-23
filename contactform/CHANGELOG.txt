@@ -1,4 +1,12 @@
 ﻿CHANGELOG.txt
+20150323
+	Starting to add ReCapcha
+20150322
+	Added some comments to the code
+	Added a CC mail-header to the contact.php, thous sending a copy of the 
+	message to the sender
+20150321
+	Uploaded the code to GiHub: https://github.com/BlackSkorpio/koken-contactform
 20150320
 	Added a simple versioning to the files, will do for now
 
@@ -31,12 +39,11 @@
 20150311
 	Made <contact.lens> pick up {{ site.title }} and the <koken:head> to make it more 
 	a "real" koken page
-	Added the code for <koken:profile_facebook> and <koken:profile_twitter> to my
-	"business card"
+	Added the code for {{ profile.name }}, <koken:profile_facebook> and 
+	<koken:profile_twitter> to my "business card"
 
 
 TO DO!
-Get the whole "echilada" up on GITHUB maybe?
 Make create_contact_lens.php more like a "real" installer: now it is plain ugly!!!!
 But it gets the job done!
 Make it a "real" plugin to koken!!!!

@@ -1,5 +1,5 @@
 <?php
-// contact.php version: 2015032016:53
+// contact.php version: 2015032213:31
 // MUST BE ANSI NOT UTF-8
 // Uncomment for trouble shooting
 //error_reporting (E_ALL ^ E_NOTICE);
@@ -28,6 +28,7 @@ if ($post) {
 $headers - <<<EOT
 From: $isoname <$email>
 Reply-To: $email
+Cc: $email
 Date: $date
 Message-ID: $mid
 MIME-Version: 1.0
@@ -40,6 +41,7 @@ EOT;
 		$mail = $mailfunction("$recipientname <$recipient>", $isosubject, $isomessage,
                "From: ".$isoname." <".$email.">\r\n"
               ."Reply-To: ".$email."\r\n"
+			  ."Cc: ".$email."\r\n"
 			  ."Date: ".$date."\r\n"
 			  ."Message-ID: ".$mid."\r\n"
 			  ."MIME-Version: 1.0\r\n"

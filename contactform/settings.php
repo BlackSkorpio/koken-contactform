@@ -1,5 +1,5 @@
 <?php
-//Settings.php version: 2015032016:55
+//Settings.php version: 2015032315:30
 /////////////////////////////////////
 // settings.php
 ////////////////////////////////////
@@ -17,10 +17,16 @@
 	$mailfunction 	=	"mail";
 	$error_notice 	=	"Unable to deliver mail.";
 
+// Use Google ReCaptcha
+// Default is <1> (To use it)
+	$userecapha		=	1;
+// ReCaptcha key
+	$recaptchakey	=	"6LcSAQITAAAAANwf3-rKzvUCXMTBnmjINf-uebrQ";
+
 //what is the theme directorys name
 // The name of your theme in lowercase
 	$themedirname	=	'elementary';
-//where is our header?
+//where is our header and footer?
 // Either inc or layouts
 	$placeofheader	=	'layouts';
 

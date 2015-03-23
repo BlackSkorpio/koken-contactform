@@ -1,5 +1,5 @@
 ﻿<?php
-// create_contact_lens.php version: 2015032018:18
+// create_contact_lens.php version: 2015032315:31
 // Make sure we get the settings with us
 include 'settings.php';
 // file extension for the file we create (only for dev purpose)
@@ -10,7 +10,9 @@ if (file_exists($filename)) {
 	// There is a contact.lens already, leave it alone
 	echo ' Your contact.'.$lensextension.' exists already, so we are leaving it alone';
 	die;
-} else {
+} 
+else 
+{
 	// Could not find a contact.lens, so we creates one for you
 echo 'Creating the standard /storage/themes/'.$themedirname.'/contact.'.$lensextension.' for you';
 
@@ -29,10 +31,15 @@ fwrite($contact_lens, '<koken:include file="'.$placeofheader.'/header.html" />
 	//Check if we will be using the "Businesscard" or not
 	// If yes, print out the extra JS line to get the correct font
 	 if ($usebuscard == 1) {
-	  fwrite($contact_lens, $theheadertype);
+		fwrite($contact_lens, $theheadertype);
 	 }
-    fwrite($contact_lens, '
-	</koken:head>
+	 // Check if we are using Capcha in our form
+	 if ($userecapha == 1) {
+		fwrite($contact_lens, '
+		<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+		')
+	}
+	fwrite($contact_lens, '</koken:head>
 
 <script src="/'.$contactformdir.'/js/contact_form.js"></script>
 <div id="content">
@@ -56,8 +63,12 @@ fwrite($contact_lens, '<koken:include file="'.$placeofheader.'/header.html" />
           <div class="form_group">
             <label class="contact_label" for="message">'.$youmessage.':</label>
             <textarea id="message" name="message" required rows="10" cols="30" placeholder="'.$youmessage.'" ></textarea>
-          </div>
-          <input type="submit" value="'.$submitbutton.'" />
+          </div>');
+		  // Check if we are using Capcha in our form
+		  if ($userecapha == 1) {
+			fwrite($contact_lens, '<div class="g-recaptcha" data-sitekey="'.$recaptchakey.'"></div>');
+		  }
+          fwrite($contact_lens, '<input type="submit" value="'.$submitbutton.'" />
         </div>
         <div id="note"></div>
       </fieldset>
@@ -79,6 +90,7 @@ fwrite($contact_lens, '<koken:include file="'.$placeofheader.'/header.html" />
 					</a>'
 					);
 				}
+					// If you filled out your FB info in kokenadmin, print out the FB image
 					fwrite($contact_lens, '<koken:profile_facebook>
 						<a href="{{ profile.facebook }}" title="'.$contactme.' Facebook">
 							<img src="/'.$contactformdir.'/icons/'.$facebookpic.'" width="34" height="34" hspace="5" vspace="5" alt="Facebook" />
@@ -98,6 +110,7 @@ fwrite($contact_lens, '<koken:include file="'.$placeofheader.'/header.html" />
 					</a>
 					');
 				}
+					// If you filled out your Twitter info in Kokenadmin, print out the Twitter image
 					fwrite($contact_lens, '<koken:profile_twitter>
 						<a href="https://twitter.com/{{ profile.twitter }}" title="'.$followme.' Twitter">
 							<img src="/'.$contactformdir.'/icons/'.$twitterpic.'" width="34" height="34" hspace="5" vspace="5" alt="Twitter" />
