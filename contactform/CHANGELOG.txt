@@ -1,6 +1,7 @@
 ﻿CHANGELOG.txt
 20150323
 	Starting to add ReCapcha
+	Cleaned up mail headers in contact.php
 20150322
 	Added some comments to the code
 	Added a CC mail-header to the contact.php, thous sending a copy of the 
