@@ -21,7 +21,7 @@
 // Default is <1> (To use it)
 	$userecapha		=	1;
 // ReCaptcha key
-	$recaptchakey	=	"6LcSAQITAAAAANwf3-rKzvUCXMTBnmjINf-uebrQ";
+	$recaptchakey	=	"GET-YOUR-KEY-FROM-GOOGLE";
 
 //what is the theme directorys name
 // The name of your theme in lowercase
